@@ -10,6 +10,7 @@ from functions.get_files_info import get_files_info
 from functions.write_file import write_file
 from functions.run_python_file import run_python_file
 from config import MAX_ITERATIONS
+from prompt import system_prompt
 
 def parse_args():
     prompt_parts = []
@@ -38,18 +39,6 @@ def main():
     messages = [
         types.Content(role="user", parts=[types.Part(text=prompt)]),
     ]
-
-    system_prompt = """You are a helpful AI coding agent.
-
-When a user asks a question or makes a request, make a function call plan. You can perform the following operations:
-
-- List files and directories
-- Read file contents
-- Execute Python files with optional arguments
-- Write or overwrite files
-
-All paths you provide should be relative to the working directory. You do not need to specify the working directory in your function calls as it is automatically injected for security reasons.
-"""
 
     schema_get_files_info = types.FunctionDeclaration(
         name="get_files_info",
