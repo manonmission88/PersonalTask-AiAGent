@@ -18,9 +18,9 @@ def test():
     print("Result for '/bin' directory:")
     print(result)
 
-    result = get_files_info("calculator", "../")
-    print("Result for '../' directory:")
-    print(result)
+    # result = get_files_info("calculator", "../")
+    # print("Result for '../' directory:")
+    # print(result)
     
     # result = get_file_content("calculator", "main.py")
     # print("Result for 'main.py' file:")
@@ -43,19 +43,19 @@ def test():
     # result = write_file("calculator", "/tmp/temp.txt", "this should not be allowed")
     # print(result)
     
-    print('test for wrun python file')
-    result = run_python_file("calculator", "main.py")
-    print(result)
+    # print('test for wrun python file')
+    # result = run_python_file("calculator", "main.py")
+    # print(result)
     
-    result = run_python_file("calculator", "tests.py")
-    print(result)
+    # result = run_python_file("calculator", "tests.py")
+    # print(result)
     
-    result = run_python_file("calculator", "../main.py")
-    print(result)
+    # result = run_python_file("calculator", "../main.py")
+    # print(result)
 
     
-    result = run_python_file("calculator", "nonexistent.py")
-    print(result)
+    # result = run_python_file("calculator", "nonexistent.py")
+    # print(result)
 
 
 

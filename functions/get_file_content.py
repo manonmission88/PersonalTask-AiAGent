@@ -1,5 +1,5 @@
 import os
-
+from config import MAX_CHARS
 def get_file_content(working_directory, file_path):
     try:
         # Resolve absolute paths
@@ -16,12 +16,11 @@ def get_file_content(working_directory, file_path):
 
         # Read and return the file content
         #truncate the content 
-        max_chars = 10000
         with open(file_path, 'r') as file:
             content = file.read()
             # print(len(content),"+++")
-            if len(content) > max_chars:
-                truncated_content = content[:max_chars] + f"\n[...File \"{file_path}\" truncated at 10000 characters]"
+            if len(content) > MAX_CHARS:
+                truncated_content = content[:MAX_CHARS] + f"\n[...File \"{file_path}\" truncated at 10000 characters]"
                 return truncated_content
             return content
         
